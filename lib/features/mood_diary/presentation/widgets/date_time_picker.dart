@@ -24,7 +24,7 @@ class DateTimePicker extends StatelessWidget {
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
-            SizedBox(),
+            const SizedBox(),
             Text(DateFormatter.formatDateTime(selectedDateTime), style: AppTextStyles.dateTime),
             SvgPicture.asset(
               'assets/icons/calendar.svg',
@@ -47,14 +47,7 @@ class DateTimePicker extends StatelessWidget {
     );
 
     if (result != null) {
-      final newDateTime = DateTime(
-        result.year,
-        result.month,
-        result.day,
-        selectedDateTime.hour,
-        selectedDateTime.minute,
-      );
-      onDateTimeChanged(newDateTime);
+      onDateTimeChanged(result);
     }
   }
 }
